@@ -12,7 +12,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("hit"):
 		var dir := Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
-		apply_central_impulse(Vector3(dir.x, 0, dir.y) * strength)
+		var strength_multiplier = dir.length()
+		apply_central_impulse(Vector3(dir.x, 0, dir.y) * strength * strength_multiplier)
 
 func reset() -> void:
 	global_position = checkpoint

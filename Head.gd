@@ -14,12 +14,15 @@ func _ready():
 	pass
 
 func _process(delta):
-	shaft.transform = shaft.transform.scaled(Vector3(1,length,1))
-	transform.origin = target.transform.origin
+	
 	var dir2 = Input.get_vector("aim_left","aim_right","aim_up","aim_down")
+	shaft.basis = Basis()
+	shaft.transform = shaft.transform.scaled(Vector3(1,dir2.length(),1))
+	transform = Transform3D(basis, target.transform.origin)
 	dir = Vector3(dir2.x, 0, dir2.y)
 	var angle = atan2(dir.x,dir.z) + deg_to_rad(180)
 	
+	print(transform)
 	body.basis = Basis(Vector3(0,0,1),angle)
 	body.basis = body.basis.rotated(Vector3(1,0,0),deg_to_rad(-90))
 	body.transform = body.transform.scaled(Vector3(0.05,0.05,0.05))

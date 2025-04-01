@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://biwvhhpqg3oq1"]
+[gd_scene load_steps=10 format=4 uid="uid://biwvhhpqg3oq1"]
 
 [ext_resource type="Script" uid="uid://ct4fxuuei6vgv" path="res://Head.gd" id="1_5qd7q"]
+[ext_resource type="Material" uid="uid://de2dakn4a4fik" path="res://Materialien/arrow_material.tres" id="1_xl238"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq27d"]
 
@@ -70,6 +71,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fejrv")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0gmi"]
+albedo_color = Color(0.760554, 0.112704, 0.737274, 1)
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
@@ -77,6 +81,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 transform = Transform3D(0.965, 0, 0, 0, 0.965, 0, 0, 0, 0.965, 0, 1.81119, 0)
 mesh = SubResource("ArrayMesh_xl238")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_xl238")
 
 [node name="HeadPos" type="Node3D" parent="Cylinder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03627, 0)
@@ -85,6 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03627, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95783, 0)
 mesh = SubResource("ArrayMesh_v0gmi")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_v0gmi")
 script = ExtResource("1_5qd7q")
 target = NodePath("../Cylinder/HeadPos")
 shaft = NodePath("../Cylinder")
