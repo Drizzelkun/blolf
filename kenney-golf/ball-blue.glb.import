@@ -35,7 +35,9 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:ball-blue": {
-"generate/physics": true
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 4
 }
 }
 }
