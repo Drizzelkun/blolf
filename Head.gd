@@ -18,7 +18,7 @@ func _process(delta):
 	transform.origin = target.transform.origin
 	var dir2 = Input.get_vector("aim_left","aim_right","aim_up","aim_down")
 	dir = Vector3(dir2.x, 0, dir2.y)
-	var angle = atan2(dir.z,dir.x) 
+	var angle = atan2(dir.x,dir.z) + deg_to_rad(180)
 	
 	body.basis = Basis(Vector3(0,0,1),angle)
 	body.basis = body.basis.rotated(Vector3(1,0,0),deg_to_rad(-90))
