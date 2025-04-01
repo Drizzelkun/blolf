@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://lbw32vvfaq6d"]
+[gd_scene load_steps=15 format=4 uid="uid://lbw32vvfaq6d"]
 
 [ext_resource type="MeshLibrary" uid="uid://h38oydmgwkho" path="res://kenney-golf.tres" id="1_sqidu"]
 [ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://kenney-golf/Textures/colormap.png" id="2_v0ov3"]
 [ext_resource type="Script" uid="uid://coky5jtdvd0kp" path="res://player.gd" id="2_x1r1u"]
+[ext_resource type="Script" uid="uid://djq08w15oo7ys" path="res://bounds.gd" id="4_f80a1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sqidu"]
 sky_horizon_color = Color(0.706413, 0.723663, 0.747663, 1)
@@ -66,6 +67,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x8fpw")
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x1r1u"]
+
 [node name="Golf" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -79,15 +82,15 @@ environment = SubResource("Environment_x1r1u")
 mesh_library = ExtResource("1_sqidu")
 physics_material = SubResource("PhysicsMaterial_x1r1u")
 cell_size = Vector3(1, 1, 1)
+collision_mask = 0
 data = {
 "cells": PackedInt32Array(0, 65535, 655375, 0, 2, 655458, 0, 3, 1441895, 1, 3, 1441897, 2, 3, 1441914, 3, 3, 1441915, 4, 3, 1048681, 5, 3, 1048603, 0, 1, 655458, 0, 0, 655458)
 }
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.687088, 0.726575, 0, -0.726575, 0.687088, 3.08698, 4.43974, 5.69684)
-
 [node name="Player" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59004, 0.826254, 0)
+collision_layer = 4
+collision_mask = 3
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_f80a1")
 script = ExtResource("2_x1r1u")
@@ -98,3 +101,14 @@ shape = SubResource("SphereShape3D_x1r1u")
 [node name="ball-blue" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("ArrayMesh_f80a1")
 skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.461253, 0.887269, 0, -0.887269, 0.461253, 3.08698, 3.38491, 3.66146)
+
+[node name="World Boundary" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("4_f80a1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundary"]
+shape = SubResource("WorldBoundaryShape3D_x1r1u")
