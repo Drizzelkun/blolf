@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://dibvgsq1qsje7"]
+
+[ext_resource type="Script" uid="uid://htbnwuoaw3wm" path="res://scripts/timing_minigame.gd" id="1_jax6b"]
+[ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_ytqxg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ytqxg"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_icgyc"]
+sky_material = SubResource("ProceduralSkyMaterial_ytqxg")
+
+[sub_resource type="Environment" id="Environment_wxryo"]
+background_mode = 2
+sky = SubResource("Sky_icgyc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_jax6b"]
+line_spacing = 4.0
+font = ExtResource("2_ytqxg")
+font_size = 55
+
+[sub_resource type="SphereMesh" id="SphereMesh_ytqxg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icgyc"]
+albedo_color = Color(0.933333, 0.482353, 0.631373, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_icgyc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxryo"]
+albedo_color = Color(0.482101, 0.686733, 0.669884, 1)
+
+[node name="TimingMinigame" type="Node3D"]
+script = ExtResource("1_jax6b")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wxryo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(7.3, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+size = Vector3(7.3, 5, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -1.51808e-08, 8.60946e-08, 0, 0.984808, 0.173648, -8.74228e-08, 0.173648, -0.984808, 0, 1.5, -3)
+keep_aspect = 0
+fov = 60.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 30.0
+offset_right = 20.0
+offset_bottom = 30.0
+grow_horizontal = 2
+
+[node name="TimerText" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_jax6b")
+horizontal_alignment = 1
+
+[node name="player_placeholder1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+mesh = SubResource("SphereMesh_ytqxg")
+surface_material_override/0 = SubResource("StandardMaterial3D_icgyc")
+
+[node name="player_placeholder2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+mesh = SubResource("SphereMesh_icgyc")
+surface_material_override/0 = SubResource("StandardMaterial3D_wxryo")

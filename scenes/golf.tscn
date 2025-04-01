@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://lbw32vvfaq6d"]
+
+[ext_resource type="MeshLibrary" uid="uid://h38oydmgwkho" path="res://assets/kenney-golf.tres" id="1_igy1l"]
+[ext_resource type="PackedScene" uid="uid://y0b0eay8y7f7" path="res://scenes/player.tscn" id="2_ymqda"]
+[ext_resource type="PackedScene" uid="uid://i5h3wujyqbre" path="res://scenes/world_boundary.tscn" id="3_igy1l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sqidu"]
+sky_horizon_color = Color(0.706413, 0.723663, 0.747663, 1)
+ground_bottom_color = Color(0.22, 0.22, 0.22, 1)
+ground_horizon_color = Color(0.706413, 0.723663, 0.747663, 1)
+
+[sub_resource type="Sky" id="Sky_v0ov3"]
+sky_material = SubResource("ProceduralSkyMaterial_sqidu")
+
+[sub_resource type="Environment" id="Environment_x1r1u"]
+background_mode = 2
+sky = SubResource("Sky_v0ov3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x1r1u"]
+
+[node name="Golf" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x1r1u")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_igy1l")
+physics_material = SubResource("PhysicsMaterial_x1r1u")
+cell_size = Vector3(1, 1, 1)
+collision_mask = 0
+data = {
+"cells": PackedInt32Array(0, 65535, 655375, 0, 2, 655458, 0, 3, 1441895, 1, 3, 1441897, 2, 3, 1441914, 3, 3, 1441915, 4, 3, 1048681, 5, 3, 1048603, 0, 1, 655458, 0, 0, 655458)
+}
+
+[node name="Player" parent="." instance=ExtResource("2_ymqda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59004, 0.826254, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.461253, 0.887269, 0, -0.887269, 0.461253, 3.08698, 3.38491, 3.66146)
+
+[node name="World Boundary" parent="." instance=ExtResource("3_igy1l")]

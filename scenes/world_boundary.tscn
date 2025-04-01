@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://i5h3wujyqbre"]
+
+[ext_resource type="Script" uid="uid://djq08w15oo7ys" path="res://scripts/bounds.gd" id="1_viule"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x1r1u"]
+
+[node name="World Boundary" type="Area3D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_viule")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_x1r1u")
