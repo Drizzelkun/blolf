@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2nt3ckius8h2"]
+
+[ext_resource type="Script" uid="uid://dstsxjrblwxk6" path="res://Skripte/PlayerBall.gd" id="1_ikkmd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_74d16"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3crgn"]
+
+[node name="Node3D" type="RigidBody3D"]
+script = ExtResource("1_ikkmd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+shape = SubResource("SphereShape3D_74d16")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("SphereMesh_3crgn")
+skeleton = NodePath("../..")
