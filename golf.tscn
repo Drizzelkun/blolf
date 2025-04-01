@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://lbw32vvfaq6d"]
+[gd_scene load_steps=2 format=3 uid="uid://lbw32vvfaq6d"]
+
+[ext_resource type="MeshLibrary" uid="uid://h38oydmgwkho" path="res://kenney-golf.tres" id="1_sqidu"]
 
 [node name="Golf" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_sqidu")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(0, 0, 655363, 0, 65535, 655375, 0, 1, 655393, 0, 2, 37)
+}
