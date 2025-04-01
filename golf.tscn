@@ -2,8 +2,8 @@
 
 [ext_resource type="MeshLibrary" uid="uid://h38oydmgwkho" path="res://kenney-golf.tres" id="1_sqidu"]
 [ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://kenney-golf/Textures/colormap.png" id="2_v0ov3"]
-[ext_resource type="Script" uid="uid://coky5jtdvd0kp" path="res://player.gd" id="2_x1r1u"]
-[ext_resource type="Script" uid="uid://djq08w15oo7ys" path="res://bounds.gd" id="4_f80a1"]
+[ext_resource type="Script" path="res://player.gd" id="2_x1r1u"]
+[ext_resource type="Script" path="res://bounds.gd" id="4_f80a1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sqidu"]
 sky_horizon_color = Color(0.706413, 0.723663, 0.747663, 1)

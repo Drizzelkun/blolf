@@ -43,7 +43,7 @@ func end_game(deviceID: int):
 	label.text += "\n\nRestart? Press SPACE (for debugging purposes)"
 	
 	
-	Global.players[deviceID].score += 1
+	Global.update_player_score(deviceID, 1)
 
 	#get_tree().change_scene_to_file("res://golf.tscn")
 
