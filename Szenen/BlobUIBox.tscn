@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnw522vat0swm"]
+
+[ext_resource type="Texture2D" uid="uid://5s7kljts008y" path="res://assets/blob_blau_profil.png" id="1_icvuv"]
+
+[sub_resource type="Theme" id="Theme_hy425"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dse4e"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Panel"]
+custom_minimum_size = Vector2(220, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -932.0
+offset_bottom = -588.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hy425")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dse4e")
+
+[node name="Profilbiild" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -19.0
+offset_right = 53.0
+offset_bottom = 21.0
+grow_vertical = 2
+texture = ExtResource("1_icvuv")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 7.0
+offset_right = 206.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Blobo"
+
+[node name="Geld" type="Label" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 30.0
+offset_right = 101.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Geld:"
