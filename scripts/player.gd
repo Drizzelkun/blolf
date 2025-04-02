@@ -10,20 +10,24 @@ class_name Player
 @onready var arrow := $Arrow
 @onready var shaft := $Arrow/Shaft
 @onready var head := $Arrow/Head
-
-@onready var body := $Blob
+@onready var anim := $Blob/AnimationPlayer
+@onready var mesh := $Blob/Armature/Armature_001/Skeleton3D/Icosphere_002
 
 var checkpoint: Vector3
 var press_time: float = 0.0
 var aim: Vector2
 var power := 0.0
 
+func set_color(color: Color):
+	var mat: StandardMaterial3D = mesh.get_active_material(0)
+	mat.albedo_color = color
+	mesh.set_surface_override_material(0, mat)
+
 func _input(event: InputEvent) -> void:
 	if not event.device == device:
 		return
 	elif event.is_action_pressed("hit"):
 		press_time = Time.get_unix_time_from_system()
-		body.playBall()
 	elif event.is_action_released("hit"):
 		var press_length := Time.get_unix_time_from_system() - press_time
 		power = strength_curve.sample(press_length)
@@ -44,10 +48,18 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			if impact > 1e-1:
 				Input.start_joy_vibration(device, impact, impact, 0.05)
 
+func _physics_process(delta: float) -> void:
+	if linear_velocity.length_squared() < 1e-1:
+		anim.play_backwards("Blob/CurlUp")
+	else:
+		anim.play("Blob/CurlUp")
+
 func _process(delta: float) -> void:
 	if press_time:
 		var press_length := Time.get_unix_time_from_system() - press_time
 		power = strength_curve.sample(press_length)
+	else:
+		power = 1.0
 	var dir3d := Vector3(aim.x, 0, aim.y)
 	update_arrow(dir3d * power * arrow_length)
 
