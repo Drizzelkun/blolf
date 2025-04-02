@@ -12,8 +12,9 @@ gravity = Vector3(0, 98, 0)
 linear_accel_min = -100.0
 linear_accel_max = 100.0
 damping_max = 100.0
-hue_variation_min = -1.0
-hue_variation_max = 1.0
+scale_min = 0.0
+scale_max = 20.08
+color = Color(1, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_1x85b"]
 default_font = ExtResource("1_8fwv5")

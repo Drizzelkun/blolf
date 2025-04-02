@@ -22,4 +22,7 @@ func _input(event: InputEvent) -> void:
 func win(winner: Player) -> void:
 	print("Player ", winner.device, " won")
 	$CanvasLayer/WinScreen/Label.text = names[winner.device] + " won"
+	var particles: GPUParticles2D = $CanvasLayer/WinScreen/CenterContainer/Control/GPUParticles2D
+	var material: ParticleProcessMaterial = particles.process_material
+	material.color = colors[winner.device]
 	$CanvasLayer.show()
