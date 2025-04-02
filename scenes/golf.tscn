@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://lbw32vvfaq6d"]
+[gd_scene load_steps=11 format=3 uid="uid://lbw32vvfaq6d"]
 
 [ext_resource type="Script" uid="uid://b58w3to55of5i" path="res://scripts/golf.gd" id="1_8vh3s"]
 [ext_resource type="Texture2D" uid="uid://de3vjg271e0bf" path="res://assets/skybox/kloppenheim_06_puresky_4k.hdr" id="1_tcnak"]
 [ext_resource type="PackedScene" uid="uid://i5h3wujyqbre" path="res://scenes/world_boundary.tscn" id="3_igy1l"]
+[ext_resource type="PackedScene" uid="uid://c5vqwsxcrx8en" path="res://scenes/flag.tscn" id="5_tcnak"]
+[ext_resource type="PackedScene" uid="uid://b6fgcdv8axg5w" path="res://scenes/UI/win_screen.tscn" id="6_8vh3s"]
 [ext_resource type="PackedScene" uid="uid://byvam68pt3qym" path="res://baked.tscn" id="7_wfhf3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8vh3s"]
@@ -42,3 +44,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.441497, -1, 0.0829107)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BakedMap/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wfhf3")
+
+[node name="Flag" parent="BakedMap" instance=ExtResource("5_tcnak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, 3.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("6_8vh3s")]
+
+[connection signal="win" from="BakedMap/Flag" to="." method="_on_flag_win"]
+[connection signal="win" from="BakedMap/Flag" to="." method="win"]

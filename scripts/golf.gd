@@ -17,3 +17,8 @@ func _input(event: InputEvent) -> void:
 		new_player.name = "Player" + str(event.device)
 		new_player.set_color(colors[event.device])
 		controllers.append(event.device)
+
+func win(winner: Player) -> void:
+	print("Player ", winner.device, " won")
+	$CanvasLayer/WinScreen/Label.text = "Player " + str(winner.device) + " won"
+	$CanvasLayer.show()

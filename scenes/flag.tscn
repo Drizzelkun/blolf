@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5vqwsxcrx8en"]
+
+[ext_resource type="PackedScene" uid="uid://brdqvvi2txkhf" path="res://assets/kenney-golf/flag-red.glb" id="1_32e5v"]
+[ext_resource type="Script" uid="uid://boiwfi1sfhovv" path="res://scripts/flag.gd" id="2_q38m2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tjkec"]
+radius = 0.113764
+
+[node name="Flag" instance=ExtResource("1_32e5v")]
+script = ExtResource("2_q38m2")
+
+[node name="Hole" type="Area3D" parent="." index="1"]
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hole" index="0"]
+shape = SubResource("SphereShape3D_tjkec")

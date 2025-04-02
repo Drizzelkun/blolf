@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6fgcdv8axg5w"]
+
+[ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="1_8fwv5"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m3d70"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 187.02
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -100.0
+linear_accel_max = 100.0
+damping_max = 100.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="Theme" id="Theme_1x85b"]
+default_font = ExtResource("1_8fwv5")
+default_font_size = 210
+
+[node name="WinScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CenterContainer/Control"]
+position = Vector2(256, 256)
+scale = Vector2(1.0009, 1)
+amount = 5000
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_m3d70")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_1x85b")
+text = "You won"
+horizontal_alignment = 1
+vertical_alignment = 1
