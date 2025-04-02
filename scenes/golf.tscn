@@ -1,21 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://lbw32vvfaq6d"]
+[gd_scene load_steps=11 format=3 uid="uid://lbw32vvfaq6d"]
 
 [ext_resource type="Script" uid="uid://b58w3to55of5i" path="res://scripts/golf.gd" id="1_8vh3s"]
-[ext_resource type="Texture2D" uid="uid://de3vjg271e0bf" path="res://assets/skybox/kloppenheim_06_puresky_4k.hdr" id="1_tcnak"]
 [ext_resource type="PackedScene" uid="uid://i5h3wujyqbre" path="res://scenes/world_boundary.tscn" id="3_igy1l"]
 [ext_resource type="PackedScene" uid="uid://c5vqwsxcrx8en" path="res://scenes/flag.tscn" id="5_tcnak"]
 [ext_resource type="PackedScene" uid="uid://b6fgcdv8axg5w" path="res://scenes/UI/win_screen.tscn" id="6_8vh3s"]
 [ext_resource type="LightmapGIData" uid="uid://c0c3tiur0nep2" path="res://scenes/golf.lmbake" id="7_i1bp4"]
 [ext_resource type="PackedScene" path="res://baked.tscn" id="7_wfhf3"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8vh3s"]
-panorama = ExtResource("1_tcnak")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8vh3s"]
+sky_top_color = Color(0.2112, 0.534453, 0.88, 1)
+sky_horizon_color = Color(1, 0.6925, 0.59, 1)
+ground_bottom_color = Color(1, 0.694118, 0.588235, 1)
+ground_horizon_color = Color(1, 0.694118, 0.588235, 1)
+ground_curve = 2.07936
 
 [sub_resource type="Sky" id="Sky_v0ov3"]
-sky_material = SubResource("PanoramaSkyMaterial_8vh3s")
+sky_material = SubResource("ProceduralSkyMaterial_8vh3s")
 
 [sub_resource type="Environment" id="Environment_x1r1u"]
-background_mode = 2
+background_mode = 1
+background_color = Color(1, 0.7975, 0.73, 1)
 sky = SubResource("Sky_v0ov3")
 glow_enabled = true
 
@@ -26,14 +30,17 @@ data = PackedVector3Array(0.0001, 0.5, -1, 0.0001, 0.5, -0.0001, 1, 0.5, -0.0001
 script = ExtResource("1_8vh3s")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.8857, 0.40206, -0.232129, 0.0150933, 0.474798, 0.879966, 0.464013, -0.782889, 0.41446, 0, 0, 0)
+transform = Transform3D(0.897118, 0.40206, 0.183107, -0.375273, 0.474798, 0.796077, 0.233132, -0.782889, 0.576832, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x1r1u")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.461253, 0.887269, 0, -0.887269, 0.461253, 3.08698, 3.38491, 3.66146)
+transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0.14011, 1.6016, 3.74802)
+projection = 1
+size = 5.0
+far = 10.0
 
 [node name="World Boundary" parent="." instance=ExtResource("3_igy1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
