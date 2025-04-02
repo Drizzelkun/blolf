@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dibvgsq1qsje7"]
+[gd_scene load_steps=17 format=3 uid="uid://dibvgsq1qsje7"]
 
 [ext_resource type="Script" uid="uid://htbnwuoaw3wm" path="res://scripts/timing_minigame.gd" id="1_jax6b"]
 [ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_ytqxg"]
+[ext_resource type="PackedScene" uid="uid://ci7o47uw11ev5" path="res://scenes/UI/MainUI.tscn" id="3_abhjj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ytqxg"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -21,6 +22,10 @@ line_spacing = 4.0
 font = ExtResource("2_ytqxg")
 font_size = 55
 
+[sub_resource type="LabelSettings" id="LabelSettings_r3dxb"]
+font = ExtResource("2_ytqxg")
+font_size = 50
+
 [sub_resource type="SphereMesh" id="SphereMesh_ytqxg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icgyc"]
@@ -31,6 +36,16 @@ albedo_color = Color(0.933333, 0.482353, 0.631373, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxryo"]
 albedo_color = Color(0.482101, 0.686733, 0.669884, 1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_abhjj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stavv"]
+albedo_color = Color(0.829432, 0.60697, 0.0803945, 0.752941)
+
+[sub_resource type="SphereMesh" id="SphereMesh_b5kw8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csnvy"]
+albedo_color = Color(1, 0.0257031, 0.0979621, 1)
+
 [node name="TimingMinigame" type="Node3D"]
 script = ExtResource("1_jax6b")
 
@@ -38,16 +53,17 @@ script = ExtResource("1_jax6b")
 environment = SubResource("Environment_wxryo")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(7.3, 1, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+size = Vector3(20, 1, 5)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
-size = Vector3(7.3, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+size = Vector3(20, 5, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -1.51808e-08, 8.60946e-08, 0, 0.984808, 0.173648, -8.74228e-08, 0.173648, -0.984808, 0, 1.5, -3)
+transform = Transform3D(-1, -1.51808e-08, 8.60947e-08, 0, 0.984808, 0.173648, -8.74228e-08, 0.173648, -0.984808, 1, 2, -7)
 keep_aspect = 0
-fov = 60.0
+fov = 65.0
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -69,19 +85,49 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -45.0
+offset_top = 50.0
+offset_right = 60.0
+offset_bottom = 117.0
 grow_horizontal = 2
+text = "Test"
 label_settings = SubResource("LabelSettings_jax6b")
 horizontal_alignment = 1
 
+[node name="PlayerTimingLabels" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -372.0
+offset_right = 539.0
+offset_bottom = 61.0
+label_settings = SubResource("LabelSettings_r3dxb")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 171
+paragraph_separator = "\\t"
+uppercase = true
+
 [node name="player_placeholder1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+visible = false
 mesh = SubResource("SphereMesh_ytqxg")
 surface_material_override/0 = SubResource("StandardMaterial3D_icgyc")
 
 [node name="player_placeholder2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("SphereMesh_icgyc")
 surface_material_override/0 = SubResource("StandardMaterial3D_wxryo")
+
+[node name="player_placeholder3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+visible = false
+mesh = SubResource("SphereMesh_abhjj")
+surface_material_override/0 = SubResource("StandardMaterial3D_stavv")
+
+[node name="player_placeholder4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+visible = false
+mesh = SubResource("SphereMesh_b5kw8")
+surface_material_override/0 = SubResource("StandardMaterial3D_csnvy")
+
+[node name="MainUI" parent="." instance=ExtResource("3_abhjj")]
