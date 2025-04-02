@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://y0b0eay8y7f7"]
+[gd_scene load_steps=10 format=4 uid="uid://y0b0eay8y7f7"]
 
 [ext_resource type="Script" uid="uid://coky5jtdvd0kp" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://assets/kenney-golf/Textures/colormap.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://assets/textures/colormap.png" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://c86bprnppavxm" path="res://scenes/arrow.tscn" id="3_qhqgy"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f80a1"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qhqgy"]
 friction = 0.5
-bounce = 0.5
+bounce = 0.6
 
 [sub_resource type="Curve" id="Curve_f80a1"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -56,13 +57,12 @@ shadow_mesh = SubResource("ArrayMesh_x8fpw")
 
 [node name="Player" type="RigidBody3D"]
 collision_layer = 4
-collision_mask = 3
-mass = 8.0
-physics_material_override = SubResource("PhysicsMaterial_f80a1")
+collision_mask = 7
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_qhqgy")
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_g2els")
-strength = 10.0
 strength_curve = SubResource("Curve_f80a1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -71,3 +71,5 @@ shape = SubResource("SphereShape3D_x1r1u")
 [node name="Ball" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_f80a1")
 skeleton = NodePath("")
+
+[node name="Arrow" parent="." instance=ExtResource("3_qhqgy")]
