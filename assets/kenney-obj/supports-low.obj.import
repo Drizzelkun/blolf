@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b46vxw2plfg"
+path="res://.godot/imported/supports-low.obj-89fecfcaba8e5f65fcc883f6c3201e83.mesh"
+
+[deps]
+
+files=["res://.godot/imported/supports-low.obj-89fecfcaba8e5f65fcc883f6c3201e83.mesh"]
+
+source_file="res://assets/kenney-obj/supports-low.obj"
+dest_files=["res://.godot/imported/supports-low.obj-89fecfcaba8e5f65fcc883f6c3201e83.mesh", "res://.godot/imported/supports-low.obj-89fecfcaba8e5f65fcc883f6c3201e83.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clrg7ifbwcw01"
+path="res://.godot/imported/skew-corner.obj-a3a43c147cd50d7b335478f952eafbd7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/skew-corner.obj-a3a43c147cd50d7b335478f952eafbd7.mesh"]
+
+source_file="res://assets/kenney-obj/skew-corner.obj"
+dest_files=["res://.godot/imported/skew-corner.obj-a3a43c147cd50d7b335478f952eafbd7.mesh", "res://.godot/imported/skew-corner.obj-a3a43c147cd50d7b335478f952eafbd7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

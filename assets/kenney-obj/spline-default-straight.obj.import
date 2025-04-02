@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqffxw8ahekho"
+path="res://.godot/imported/spline-default-straight.obj-7f5a2f4514c903a88c2c7c5ae7c6cf3d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spline-default-straight.obj-7f5a2f4514c903a88c2c7c5ae7c6cf3d.mesh"]
+
+source_file="res://assets/kenney-obj/spline-default-straight.obj"
+dest_files=["res://.godot/imported/spline-default-straight.obj-7f5a2f4514c903a88c2c7c5ae7c6cf3d.mesh", "res://.godot/imported/spline-default-straight.obj-7f5a2f4514c903a88c2c7c5ae7c6cf3d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

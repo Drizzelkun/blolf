@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://y0b0eay8y7f7"]
 
 [ext_resource type="Script" uid="uid://coky5jtdvd0kp" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://assets/kenney-golf/Textures/colormap.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://assets/textures/colormap.png" id="2_qhqgy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f80a1"]
 friction = 0.5
