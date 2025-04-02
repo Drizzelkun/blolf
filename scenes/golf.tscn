@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://i5h3wujyqbre" path="res://scenes/world_boundary.tscn" id="3_igy1l"]
 [ext_resource type="PackedScene" uid="uid://c5vqwsxcrx8en" path="res://scenes/flag.tscn" id="5_tcnak"]
 [ext_resource type="PackedScene" uid="uid://b6fgcdv8axg5w" path="res://scenes/UI/win_screen.tscn" id="6_8vh3s"]
-[ext_resource type="PackedScene" uid="uid://byvam68pt3qym" path="res://baked.tscn" id="7_wfhf3"]
+[ext_resource type="PackedScene" path="res://baked.tscn" id="7_wfhf3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8vh3s"]
 panorama = ExtResource("1_tcnak")
@@ -53,5 +53,5 @@ visible = false
 
 [node name="WinScreen" parent="CanvasLayer" instance=ExtResource("6_8vh3s")]
 
-[connection signal="win" from="BakedMap/Flag" to="." method="_on_flag_win"]
 [connection signal="win" from="BakedMap/Flag" to="." method="win"]
+[connection signal="win" from="BakedMap/Flag" to="." method="_on_flag_win"]

@@ -11,7 +11,6 @@ class_name Player
 @onready var shaft := $Arrow/Shaft
 @onready var head := $Arrow/Head
 @onready var anim := $Blob/AnimationPlayer
-@onready var mesh := $Blob/Armature/Armature_001/Skeleton3D/Icosphere_002
 
 var checkpoint: Vector3
 var press_time: float = 0.0
@@ -19,9 +18,11 @@ var aim: Vector2
 var power := 0.0
 
 func set_color(color: Color):
-	var mat: StandardMaterial3D = mesh.get_active_material(0)
-	mat.albedo_color = color
-	mesh.set_surface_override_material(0, mat)
+	var material := StandardMaterial3D.new()
+	material.albedo_color = color
+	$Blob/Armature/Armature_001/Skeleton3D/hand_left.material_override = material
+	$Blob/Armature/Armature_002/Skeleton3D/hand_right.material_override = material
+	$Blob/Armature/Skeleton3D/body.material_override = material
 
 func _input(event: InputEvent) -> void:
 	if not event.device == device:

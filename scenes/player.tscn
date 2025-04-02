@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c86bprnppavxm" path="res://scenes/arrow.tscn" id="3_qhqgy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qhqgy"]
-friction = 0.5
 bounce = 0.6
 
 [sub_resource type="Curve" id="Curve_f80a1"]
@@ -16,7 +15,6 @@ margin = 0.1
 radius = 0.0370085
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ocf2"]
-resource_name = "Material.016"
 cull_mode = 2
 albedo_color = Color(0.905883, 0.317647, 0, 1)
 roughness = 0.5
@@ -530,6 +528,7 @@ collision_layer = 4
 collision_mask = 7
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_qhqgy")
+continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_g2els")
@@ -558,7 +557,7 @@ bones/0/position = Vector3(0, 0.295839, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
-[node name="Icosphere_002" type="MeshInstance3D" parent="Blob/Armature/Armature_001/Skeleton3D"]
+[node name="hand_left" type="MeshInstance3D" parent="Blob/Armature/Armature_001/Skeleton3D"]
 mesh = SubResource("ArrayMesh_qhqgy")
 skin = SubResource("Skin_dqkch")
 
@@ -574,7 +573,7 @@ bones/0/position = Vector3(-0.0838946, 0.73739, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
-[node name="Icosphere_001" type="MeshInstance3D" parent="Blob/Armature/Armature_002/Skeleton3D"]
+[node name="hand_right" type="MeshInstance3D" parent="Blob/Armature/Armature_002/Skeleton3D"]
 mesh = SubResource("ArrayMesh_qlg0r")
 skin = SubResource("Skin_tuyoq")
 
@@ -622,7 +621,7 @@ bones/5/position = Vector3(0.400255, 0.44592, 6.02049e-08)
 bones/5/rotation = Quaternion(5.30632e-08, -1.1447e-07, -0.499088, 0.866551)
 bones/5/scale = Vector3(1, 1, 1)
 
-[node name="Icosphere" type="MeshInstance3D" parent="Blob/Armature/Skeleton3D"]
+[node name="body" type="MeshInstance3D" parent="Blob/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_fjrip")
 skin = SubResource("Skin_smehm")
 
@@ -638,7 +637,7 @@ bones/0/position = Vector3(0, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
-[node name="Sphere_001" type="MeshInstance3D" parent="Blob/Armature_003/Skeleton3D"]
+[node name="eye_left" type="MeshInstance3D" parent="Blob/Armature_003/Skeleton3D"]
 mesh = SubResource("ArrayMesh_ur7pv")
 skin = SubResource("Skin_y4r1p")
 
@@ -654,7 +653,7 @@ bones/0/position = Vector3(-0.221033, 0.265239, -3.56373e-08)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
-[node name="Sphere" type="MeshInstance3D" parent="Blob/Armature_004/Skeleton3D"]
+[node name="eye_right" type="MeshInstance3D" parent="Blob/Armature_004/Skeleton3D"]
 mesh = SubResource("ArrayMesh_d2wvv")
 skin = SubResource("Skin_3v2ag")
 
