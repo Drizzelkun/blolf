@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5s7kljts008y"
-path="res://.godot/imported/blob_blau_profil.png-867d4cc6e8a760ee6848aef9b977f3d6.ctex"
+uid="uid://bx26wiuiv77i5"
+path="res://.godot/imported/blob_grün_profil.png-0e48901d03f86b0d1f344ab740a6ea17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blob_blau_profil.png"
-dest_files=["res://.godot/imported/blob_blau_profil.png-867d4cc6e8a760ee6848aef9b977f3d6.ctex"]
+source_file="res://assets/textures/blob_grün_profil.png"
+dest_files=["res://.godot/imported/blob_grün_profil.png-0e48901d03f86b0d1f344ab740a6ea17.ctex"]
 
 [params]
 

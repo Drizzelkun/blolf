@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1x58tpslmwla"
-path="res://.godot/imported/blob_orange_profil.png-44fe40212948568cbecd1efebc8c9c71.ctex"
+uid="uid://chwl1nosa10ey"
+path="res://.godot/imported/blob_profile_panel.png-5cff26620fa6d6d46ba4731c0912e4df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blob_orange_profil.png"
-dest_files=["res://.godot/imported/blob_orange_profil.png-44fe40212948568cbecd1efebc8c9c71.ctex"]
+source_file="res://assets/textures/blob_profile_panel.png"
+dest_files=["res://.godot/imported/blob_profile_panel.png-5cff26620fa6d6d46ba4731c0912e4df.ctex"]
 
 [params]
 
