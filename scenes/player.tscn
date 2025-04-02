@@ -566,7 +566,7 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, 0.295839, 0)
+bones/0/position = Vector3(0, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
@@ -582,7 +582,7 @@ bones/0/name = "Bone_2"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(-0.0838946, 0.73739, 0)
+bones/0/position = Vector3(0, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 
@@ -611,7 +611,7 @@ bones/2/rest = Transform3D(1, 4.03897e-28, 1.43493e-42, -4.03897e-28, 1, 7.10542
 bones/2/enabled = true
 bones/2/position = Vector3(0, 0.408324, 0)
 bones/2/rotation = Quaternion(-3.55271e-15, 0, -2.01948e-28, 1)
-bones/2/scale = Vector3(1.96425, 1.96425, 1.96425)
+bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Bone.003"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 4.03897e-28, 1.43493e-42, -4.03897e-28, 1, 7.10542e-15, 1.43493e-42, -7.10542e-15, 1, 0, 0.444891, 0)
@@ -662,7 +662,7 @@ bones/0/name = "Bone_5"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(-0.221033, 0.265239, -3.56373e-08)
+bones/0/position = Vector3(0, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/0/scale = Vector3(1, 1, 1)
 

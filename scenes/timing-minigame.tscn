@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dibvgsq1qsje7"]
+[gd_scene load_steps=12 format=3 uid="uid://dibvgsq1qsje7"]
 
 [ext_resource type="Script" uid="uid://htbnwuoaw3wm" path="res://scripts/timing_minigame.gd" id="1_jax6b"]
 [ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_ytqxg"]
+[ext_resource type="AudioStream" uid="uid://c36xxc0eek121" path="res://assets/sounds/minispiel_theme.wav" id="3_abhjj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ytqxg"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -85,3 +86,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_icgyc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 mesh = SubResource("SphereMesh_icgyc")
 surface_material_override/0 = SubResource("StandardMaterial3D_wxryo")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_abhjj")
+volume_db = 80.0
+max_db = 6.0
+autoplay = true
+max_polyphony = 6
