@@ -62,7 +62,8 @@ minigame_timing_stop={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-3d/solver/solver_iterations=32
+jolt_physics_3d/collisions/active_edge_threshold=1.5708
+3d/solver/solver_iterations=64
 
 [rendering]
 
