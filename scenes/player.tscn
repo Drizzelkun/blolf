@@ -68,6 +68,6 @@ strength_curve = SubResource("Curve_f80a1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_x1r1u")
 
-[node name="ball-blue" type="MeshInstance3D" parent="."]
+[node name="Ball" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_f80a1")
 skeleton = NodePath("")
