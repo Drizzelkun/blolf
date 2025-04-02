@@ -60,6 +60,7 @@ texture = ExtResource("4_40q61")
 text = "Blobi"
 
 [node name="Panel" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 301.0
 offset_top = 156.0

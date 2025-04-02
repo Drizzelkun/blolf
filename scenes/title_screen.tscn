@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://cgpy1xm5xkcuh"]
+[gd_scene load_steps=4 format=3 uid="uid://cgpy1xm5xkcuh"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://c8rtojcqmrjc5" path="res://textures/title_screen.png" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://b80u2awsdsfvf" path="res://scripts/title_screen_manager.gd" id="1_s4lrb"]
+[ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_sa3yf"]
+
+[node name="Node3D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4lrb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fgkus")
+expand_mode = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -429.0
+offset_top = -141.0
+offset_right = 445.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 95
+alignment = 1
+
+[node name="Start" type="Button" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sa3yf")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="quit" type="Button" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sa3yf")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="button_up" from="TextureRect/VBoxContainer/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="TextureRect/VBoxContainer/quit" to="." method="_on_button_button_up"]
