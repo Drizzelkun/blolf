@@ -6,16 +6,12 @@ var curState = menuState.UNPAUSED
 @onready var pause_menu = get_child(1)
 
 func _ready():
-	var positions = [Vector2(0,0),Vector2(0,0),Vector2(0,0),Vector2(0,0)]
-	print(positions)
-	for i in range(4): 
-		print(positions)
-		var box = get_child(0).get_child(i)
-		print(box)
-		positions[i] = box.get_global_transform().origin
-	Global.update_UI_pos(positions)
-	
-	print(positions)
+	var profiles = get_child(0)
+	var boxes = {}
+	for i in range(4):
+		boxes[i] = profiles.get_child(i).get_child(3)
+	Global.result_boxes = boxes
+	print(Global.result_boxes)
 
 func _input(event):
 	if (event is InputEventMouse): return
