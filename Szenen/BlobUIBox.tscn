@@ -1,23 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnw522vat0swm"]
+[gd_scene load_steps=5 format=3 uid="uid://cnw522vat0swm"]
 
+[ext_resource type="Texture2D" uid="uid://chwl1nosa10ey" path="res://assets/blob_profile_panel.png" id="1_dse4e"]
 [ext_resource type="Texture2D" uid="uid://5s7kljts008y" path="res://assets/blob_blau_profil.png" id="1_icvuv"]
 
 [sub_resource type="Theme" id="Theme_hy425"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dse4e"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4he7f"]
+texture = ExtResource("1_dse4e")
 
 [node name="Control" type="Panel"]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(250, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -932.0
+offset_right = -902.0
 offset_bottom = -588.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_hy425")
-theme_override_styles/panel = SubResource("StyleBoxFlat_dse4e")
+theme_override_styles/panel = SubResource("StyleBoxTexture_4he7f")
 
 [node name="Profilbiild" type="TextureRect" parent="."]
 layout_mode = 1

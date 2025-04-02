@@ -22,7 +22,8 @@ anchor_right = 1.0
 offset_bottom = 62.0
 grow_horizontal = 2
 theme = SubResource("Theme_mqhw7")
-theme_override_constants/separation = 91
+theme_override_constants/separation = 50
+alignment = 1
 
 [node name="Control" parent="HBoxContainer" instance=ExtResource("1_0bom8")]
 layout_mode = 2
@@ -34,7 +35,7 @@ layout_mode = 2
 texture = ExtResource("2_mqhw7")
 
 [node name="Name" parent="HBoxContainer/Control2" index="1"]
-text = "Blobi"
+text = "Blobina"
 
 [node name="Control3" parent="HBoxContainer" instance=ExtResource("1_0bom8")]
 layout_mode = 2
@@ -52,7 +53,7 @@ layout_mode = 2
 texture = ExtResource("4_40q61")
 
 [node name="Name" parent="HBoxContainer/Control4" index="1"]
-text = "Blobina"
+text = "Blobi"
 
 [editable path="HBoxContainer/Control"]
 [editable path="HBoxContainer/Control2"]
