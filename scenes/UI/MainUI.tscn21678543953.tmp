@@ -88,20 +88,28 @@ alignment = 1
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Settings")
 theme_override_fonts/font = ExtResource("7_ma8y6")
 theme_override_font_sizes/font_size = 36
 text = "Continue"
 
+[node name="Settings" type="Button" parent="Panel/MarginContainer/PauseMenu"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Continue")
+focus_neighbor_bottom = NodePath("../Quit")
+theme_override_fonts/font = ExtResource("7_ma8y6")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+
 [node name="Quit" type="Button" parent="Panel/MarginContainer/PauseMenu"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_bottom = NodePath("../Continue")
 theme_override_fonts/font = ExtResource("7_ma8y6")
 theme_override_font_sizes/font_size = 36
 text = "Quit"
-
-[connection signal="button_up" from="Panel/MarginContainer/PauseMenu/Continue" to="." method="_on_continue_button_up"]
-[connection signal="button_up" from="Panel/MarginContainer/PauseMenu/Quit" to="." method="_on_quit_button_up"]
 
 [editable path="Profiles/Control"]
 [editable path="Profiles/Control2"]
