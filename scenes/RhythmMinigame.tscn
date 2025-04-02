@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=3 uid="uid://dhmy0l5d2ll1s"]
+
+[ext_resource type="PackedScene" uid="uid://ci7o47uw11ev5" path="res://scenes/UI/MainUI.tscn" id="1_50dse"]
+[ext_resource type="Script" uid="uid://ic8mc8jmuxk0" path="res://scripts/rhythm_minigame.gd" id="1_cuuek"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cuuek"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_icgyc"]
+sky_material = SubResource("ProceduralSkyMaterial_cuuek")
+
+[sub_resource type="Environment" id="Environment_qtja8"]
+background_mode = 2
+sky = SubResource("Sky_icgyc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_el1mw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsp2m"]
+albedo_color = Color(0.933333, 0.482353, 0.631373, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jxn65"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lorya"]
+albedo_color = Color(0.829432, 0.60697, 0.0803945, 0.752941)
+
+[sub_resource type="SphereMesh" id="SphereMesh_taoox"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m2p4"]
+albedo_color = Color(0.482101, 0.686733, 0.669884, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_424mg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l7qq"]
+albedo_color = Color(1, 0.0257031, 0.0979621, 1)
+
+[node name="RhythmMinigame" type="Node3D"]
+script = ExtResource("1_cuuek")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qtja8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3, 0)
+size = Vector3(50, 1, 50)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+size = Vector3(50, 50, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 7.6194e-09, -8.70901e-08, 0, 0.996195, 0.0871558, 8.74228e-08, 0.0871558, -0.996195, 1, 4, -15)
+keep_aspect = 0
+
+[node name="player_placeholder1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, 0)
+mesh = SubResource("SphereMesh_el1mw")
+surface_material_override/0 = SubResource("StandardMaterial3D_jsp2m")
+
+[node name="player_placeholder2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2, 0)
+visible = false
+mesh = SubResource("SphereMesh_jxn65")
+surface_material_override/0 = SubResource("StandardMaterial3D_lorya")
+
+[node name="player_placeholder3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 0)
+visible = false
+mesh = SubResource("SphereMesh_taoox")
+surface_material_override/0 = SubResource("StandardMaterial3D_4m2p4")
+
+[node name="player_placeholder4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, 0)
+visible = false
+mesh = SubResource("SphereMesh_424mg")
+surface_material_override/0 = SubResource("StandardMaterial3D_3l7qq")
+
+[node name="MainUI" parent="." instance=ExtResource("1_50dse")]
+
+[node name="FallSpeedTimer" type="Timer" parent="."]
+
+[node name="SpawnRateTimer" type="Timer" parent="."]
