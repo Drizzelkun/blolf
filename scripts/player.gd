@@ -38,8 +38,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		var object_hit := state.get_contact_collider_object(contact_idx)
 		if is_instance_valid(object_hit): # To fix a case where an object hits the player as player is deleted during level transition (intermission)
 			var impact := state.get_contact_impulse(contact_idx).length()
-			if impact > 0.5:
-				print(impact)
+			if impact > 1e-1:
 				Input.start_joy_vibration(device, impact, impact, 0.05)
 
 func _process(delta: float) -> void:
@@ -57,6 +56,7 @@ func reset() -> void:
 	set_deferred("linear_velocity", Vector2.ZERO)
 	set_deferred("angular_velocity", 0)
 	set_deferred("constant_force", Vector2.ZERO)
+	print(reset)
 
 func update_arrow(dir: Vector3):
 	if dir.length_squared() > 1e-3:

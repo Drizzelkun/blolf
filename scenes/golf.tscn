@@ -33,6 +33,7 @@ environment = SubResource("Environment_x1r1u")
 transform = Transform3D(1, 0, 0, 0, 0.461253, 0.887269, 0, -0.887269, 0.461253, 3.08698, 3.38491, 3.66146)
 
 [node name="World Boundary" parent="." instance=ExtResource("3_igy1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 
 [node name="BakedMap" parent="." instance=ExtResource("7_wfhf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.441497, -1, 0.0829107)
