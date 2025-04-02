@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnw522vat0swm"]
+[gd_scene load_steps=6 format=3 uid="uid://cnw522vat0swm"]
 
 [ext_resource type="Texture2D" uid="uid://chwl1nosa10ey" path="res://assets/textures/blob_profile_panel.png" id="1_dse4e"]
 [ext_resource type="Texture2D" uid="uid://5s7kljts008y" path="res://assets/textures/blob_blau_profil.png" id="1_icvuv"]
+[ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="3_u4o0o"]
 
 [sub_resource type="Theme" id="Theme_hy425"]
 
@@ -40,6 +41,7 @@ offset_top = 7.0
 offset_right = 206.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u4o0o")
 text = "Blobo"
 
 [node name="Geld" type="Label" parent="."]
@@ -49,4 +51,5 @@ offset_top = 30.0
 offset_right = 101.0
 offset_bottom = 53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u4o0o")
 text = "Geld:"

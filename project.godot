@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://bowuqh0cwgijc"
 config/windows_native_icon="res://assets/textures/icon_blolf.ico"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
