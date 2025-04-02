@@ -11,6 +11,11 @@ class_name Player
 @onready var shaft := $Arrow/Shaft
 @onready var head := $Arrow/Head
 @onready var anim := $Blob/AnimationPlayer
+@onready var audio := $AudioStreamPlayer3D
+@onready var stream: AudioStreamPlaybackPolyphonic = audio.get_stream_playback()
+
+@onready var hit_sound := preload("res://assets/audio/golf-hit.mp3")
+@onready var impact_sound := preload("res://assets/audio/impact.ogg")
 
 var checkpoint: Vector3
 var press_time: float = 0.0
@@ -47,6 +52,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		if is_instance_valid(object_hit): # To fix a case where an object hits the player as player is deleted during level transition (intermission)
 			var impact := state.get_contact_impulse(contact_idx).length()
 			if impact > 1e-1:
+				stream.play_stream(impact_sound, 0, linear_to_db(impact))
 				Input.start_joy_vibration(device, impact, impact, 0.05)
 
 func _physics_process(delta: float) -> void:
@@ -65,7 +71,11 @@ func _process(delta: float) -> void:
 	update_arrow(dir3d * power * arrow_length)
 
 func hit(dir: Vector2, strength: float):
-	apply_central_impulse(Vector3(dir.x, 0, dir.y) * strength)
+	_hit(Vector3(dir.x, 0, dir.y) * strength)
+	
+func _hit(dir: Vector3):
+	stream.play_stream(hit_sound, 0, linear_to_db(dir.length()))
+	apply_central_impulse(dir)
 
 func reset() -> void:
 	global_position = checkpoint
