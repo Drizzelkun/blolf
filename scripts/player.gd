@@ -11,6 +11,8 @@ class_name Player
 @onready var shaft := $Arrow/Shaft
 @onready var head := $Arrow/Head
 
+@onready var body := $Blob
+
 var checkpoint: Vector3
 var press_time: float = 0.0
 var aim: Vector2
@@ -21,6 +23,7 @@ func _input(event: InputEvent) -> void:
 		return
 	elif event.is_action_pressed("hit"):
 		press_time = Time.get_unix_time_from_system()
+		body.playBall()
 	elif event.is_action_released("hit"):
 		var press_length := Time.get_unix_time_from_system() - press_time
 		power = strength_curve.sample(press_length)
