@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnw522vat0swm"]
 
-[ext_resource type="Texture2D" uid="uid://chwl1nosa10ey" path="res://assets/textures/blob_profile_panel.png" id="1_dse4e"]
+[ext_resource type="Texture2D" uid="uid://bnhathf6rb6d1" path="res://assets/textures/blob_profile_panel.png" id="1_dse4e"]
 [ext_resource type="Texture2D" uid="uid://5s7kljts008y" path="res://assets/textures/blob_blau_profil.png" id="1_icvuv"]
 
 [sub_resource type="Theme" id="Theme_hy425"]
