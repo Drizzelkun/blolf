@@ -4,6 +4,7 @@ var controllers: Array[int]
 
 @export var spawn: Vector3
 @export var colors: Array[Color] = [Color.RED, Color.GREEN, Color.BLUE, Color.PURPLE]
+@export var names: Array[StringName] = ["Red", "Green", "Blue", "Purple"]
 
 @onready var player := preload("res://scenes/player.tscn")
 
@@ -17,3 +18,8 @@ func _input(event: InputEvent) -> void:
 		new_player.name = "Player" + str(event.device)
 		new_player.set_color(colors[event.device])
 		controllers.append(event.device)
+
+func win(winner: Player) -> void:
+	print("Player ", winner.device, " won")
+	$CanvasLayer/WinScreen/Label.text = names[winner.device] + " won"
+	$CanvasLayer.show()
