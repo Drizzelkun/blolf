@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var fall_speed = 2
+@export var fall_speed = 10
 @export var min_spawn_rate = 4
 @export var max_spawn_rate = 0.3
 
@@ -18,7 +18,6 @@ var x_position_to_deviceID_map: Dictionary
 var dead_players: int
 
 func _ready():
-	await get_tree().create_timer(0.5).timeout
 	print("Entered rhythm _ready")
 	for deviceID in Global.players.keys():
 		print("Creating playerManagerDict ", deviceID)
@@ -127,7 +126,7 @@ func game_over():
 			winner = deviceID
 			
 	Global.update_player_score(winner, 1)
-	print("Player ", winner, "won the game!!")
+	print("Player ", winner, " won the game!!")
 	await get_tree().create_timer(5).timeout
 	get_tree().change_scene_to_file("res://scenes/golf.tscn")
 
