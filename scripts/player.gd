@@ -90,9 +90,10 @@ func hit(dir: Vector2, strength: float):
 	_hit(Vector3(dir.x, 0, dir.y) * strength)
 	
 func _hit(dir: Vector3):
-	Input.start_joy_vibration(device, power, power, 0.05)
-	stream.play_stream(hit_sound, 0, linear_to_db(dir.length()))
-	apply_central_impulse(dir)
+	if Global.try_move(device):
+		Input.start_joy_vibration(device, power, power, 0.05)
+		stream.play_stream(hit_sound, 0, linear_to_db(dir.length()))
+		apply_central_impulse(dir)
 
 func reset() -> void:
 	global_position = checkpoint
