@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b58w3to55of5i" path="res://scripts/golf.gd" id="1_8vh3s"]
 [ext_resource type="PackedScene" uid="uid://ci7o47uw11ev5" path="res://scenes/UI/MainUI.tscn" id="2_wfhf3"]
 [ext_resource type="PackedScene" uid="uid://i5h3wujyqbre" path="res://scenes/world_boundary.tscn" id="3_igy1l"]
-[ext_resource type="PackedScene" uid="uid://c5vqwsxcrx8en" path="res://scenes/flag.tscn" id="5_tcnak"]
+[ext_resource type="PackedScene" path="res://scenes/flag.tscn" id="5_tcnak"]
 [ext_resource type="PackedScene" uid="uid://b6fgcdv8axg5w" path="res://scenes/UI/win_screen.tscn" id="6_8vh3s"]
 [ext_resource type="LightmapGIData" uid="uid://c0c3tiur0nep2" path="res://scenes/golf.lmbake" id="7_i1bp4"]
 [ext_resource type="PackedScene" uid="uid://byvam68pt3qym" path="res://baked.tscn" id="7_wfhf3"]
@@ -31,6 +31,7 @@ data = PackedVector3Array(0.0001, 0.5, -1, 0.0001, 0.5, -0.0001, 1, 0.5, -0.0001
 script = ExtResource("1_8vh3s")
 
 [node name="Control" parent="." instance=ExtResource("2_wfhf3")]
+script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.897118, 0.40206, 0.183107, -0.375273, 0.474798, 0.796077, 0.233132, -0.782889, 0.576832, 0, 0, 0)

@@ -4,6 +4,7 @@ var players: Dictionary
 var no_more_moves := false
 var load_state := false
 var game_over := false
+var selected_map: String
 
 func _ready():
 	await get_tree().create_timer(0.4).timeout

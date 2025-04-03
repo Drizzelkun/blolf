@@ -78,6 +78,7 @@ mesh = SubResource("SphereMesh_424mg")
 surface_material_override/0 = SubResource("StandardMaterial3D_3l7qq")
 
 [node name="MainUI" parent="." instance=ExtResource("1_50dse")]
+script = null
 
 [node name="FallSpeedTimer" type="Timer" parent="."]
 
