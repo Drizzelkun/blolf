@@ -4,7 +4,10 @@ var players: Dictionary
 var no_more_moves := false
 
 func _ready():
-	for i in 1:
+	await get_tree().create_timer(0.5).timeout
+	print("Devices: ", Input.get_connected_joypads())
+	for i in Input.get_connected_joypads():
+		print("Created player ", i)
 		players[i] = PlayerState.new()
 
 func update_player_score(deviceID: int, amount: int):

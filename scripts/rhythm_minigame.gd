@@ -18,7 +18,10 @@ var x_position_to_deviceID_map: Dictionary
 var dead_players: int
 
 func _ready():
+	await get_tree().create_timer(0.5).timeout
+	print("Entered rhythm _ready")
 	for deviceID in Global.players.keys():
+		print("Creating playerManagerDict ", deviceID)
 		playerManagerDict[deviceID] = {}
 		playerManagerDict[deviceID]["score"] = 0
 		playerManagerDict[deviceID]["lives"] = 3
