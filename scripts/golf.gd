@@ -10,7 +10,7 @@ var controllers: Dictionary[int, Player]
 @onready var minigames := [preload("res://scenes/timing-minigame.tscn"), preload("res://scenes/RhythmMinigame.tscn")]
 
 func _input(event: InputEvent) -> void:
-	if controllers.find_key(event.device) == -1:
+	if controllers.keys().find(event.device) == -1:
 		var new_player: Player = player.instantiate()
 		add_child(new_player)
 		new_player.device = event.device
@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 		new_player.global_position = spawn
 		new_player.name = "Player" + str(event.device)
 		new_player.set_color(colors[event.device])
-		controllers[event.device] = new_player
+		controllers.set(event.device, new_player)
 
 func win(winner: Player) -> void:
 	print("Player ", winner.device, " won")

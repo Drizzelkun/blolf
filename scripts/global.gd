@@ -4,7 +4,7 @@ var players: Dictionary
 var no_more_moves := false
 
 func _ready():
-	for i in 2:
+	for i in 1:
 		players[i] = PlayerState.new()
 
 func update_player_score(deviceID: int, amount: int):
@@ -19,6 +19,7 @@ func try_move(device: int) -> bool:
 				all_zero = false
 				break
 		if all_zero:
+			print("No more moves")
 			no_more_moves = true
 		return true
 	else:
