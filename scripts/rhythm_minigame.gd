@@ -99,11 +99,11 @@ func _on_coin_deleted_through_hit(_coin):
 func _on_coin_deleted_through_height(_coin):
 	coins.erase(_coin)
 	
-	var player = playerManagerDict[x_position_to_deviceID_map[_coin.position.x]]
-	player["lives"] -= 1
-	print("Reduced player ", x_position_to_deviceID_map[_coin.position.x], " lives to ", player["lives"])
+	var _player = playerManagerDict[x_position_to_deviceID_map[_coin.position.x]]
+	_player["lives"] -= 1
+	print("Reduced player ", x_position_to_deviceID_map[_coin.position.x], " lives to ", _player["lives"])
 	
-	if player["lives"] == 0:
+	if _player["lives"] == 0:
 		x_positions_to_spawn_coin.erase(_coin.position.x)
 		dead_players += 1
 	_coin.queue_free()
@@ -128,7 +128,7 @@ func game_over():
 	Global.update_player_score(winner, 1)
 	print("Player ", winner, " won the game!!")
 	await get_tree().create_timer(3).timeout
-	get_tree().change_scene_to_file("res://scenes/golf.tscn")
+	Global.switch_to_main_scene()
 
 
 func is_coin_inside_circle(_coin: Node3D, circle_box: Rect2) -> bool:

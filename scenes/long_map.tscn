@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://b58w3to55of5i" path="res://scripts/golf.gd" id="1_16pr4"]
 [ext_resource type="PackedScene" uid="uid://ci7o47uw11ev5" path="res://scenes/UI/MainUI.tscn" id="1_ud2nl"]
 [ext_resource type="PackedScene" uid="uid://i5h3wujyqbre" path="res://scenes/world_boundary.tscn" id="2_16pr4"]
-[ext_resource type="PackedScene" uid="uid://c5vqwsxcrx8en" path="res://scenes/flag.tscn" id="3_po454"]
+[ext_resource type="PackedScene" path="res://scenes/flag.tscn" id="3_po454"]
 [ext_resource type="PackedScene" uid="uid://b6fgcdv8axg5w" path="res://scenes/UI/win_screen.tscn" id="4_kua5q"]
 [ext_resource type="LightmapGIData" uid="uid://c0c3tiur0nep2" path="res://scenes/golf.lmbake" id="5_vbvtx"]
-[ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://assets/kenney-golf/Textures/colormap.png" id="7_16pr4"]
+[ext_resource type="Texture2D" uid="uid://c2khhiiaa0clt" path="res://assets/textures/colormap.png" id="7_16pr4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8vh3s"]
 sky_top_color = Color(0.2112, 0.534453, 0.88, 1)
@@ -1395,7 +1395,7 @@ projection = 1
 size = 11.712
 
 [node name="World Boundary" parent="." instance=ExtResource("2_16pr4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914246, -0.9, -2.62268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914, -2, -2.623)
 
 [node name="Flag" parent="." instance=ExtResource("3_po454")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.977, -1.07947, -1.91483)

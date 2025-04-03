@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://htbnwuoaw3wm" path="res://scripts/timing_minigame.gd" id="1_jax6b"]
 [ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_ytqxg"]
 [ext_resource type="PackedScene" uid="uid://ci7o47uw11ev5" path="res://scenes/UI/MainUI.tscn" id="3_abhjj"]
-[ext_resource type="Script" path="res://scenes/player_time.gd" id="3_stavv"]
+[ext_resource type="Script" uid="uid://bpf3fcw30jsiy" path="res://scenes/player_time.gd" id="3_stavv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ytqxg"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

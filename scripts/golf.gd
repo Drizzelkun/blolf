@@ -35,10 +35,10 @@ func win(winner: Player) -> void:
 	$CanvasLayer.show()
 	Global.reset_main_game_moves(10_000) # Just for fun allow player to kick the ball around after game is over
 
-func _physics_process(delta: float) -> void:
-	for _player_ in controllers.values():
-		if _player_.linear_velocity.y > 1:
-			_player_.linear_velocity.y = 0
+func _physics_process(_delta: float) -> void:
+	#for _player_ in controllers.values():
+	#	if _player_.linear_velocity.y > 1:
+	#		_player_.linear_velocity.y = 0
 	if Global.no_more_moves and not Global.game_over:
 		var all_players_stationary := true
 		for _player in controllers.values():

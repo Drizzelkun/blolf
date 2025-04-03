@@ -6,6 +6,7 @@ var load_state := false
 var game_over := false
 var selected_map: String
 
+	
 func _ready():
 	await get_tree().create_timer(0.4).timeout
 	print("Devices: ", Input.get_connected_joypads())
@@ -14,6 +15,10 @@ func _ready():
 		print("Created player ", i)
 		players[i] = PlayerState.new()
 
+func switch_to_main_scene():
+	var scene = "res://scenes/" + selected_map + ".tscn"
+	get_tree().change_scene_to_file(scene)
+	
 func update_player_score(deviceID: int, amount: int):
 	players[deviceID].score += amount
 

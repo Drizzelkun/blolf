@@ -71,13 +71,13 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 				stream.play_stream(impact_sound, 0, linear_to_db(impact))
 				Input.start_joy_vibration(device, impact, impact, 0.05)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if linear_velocity.length_squared() < 1e-1:
 		anim.play_backwards("Blob/CurlUp")
 	else:
 		anim.play("Blob/CurlUp")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if press_time:
 		var press_length := Time.get_unix_time_from_system() - press_time
 		power = strength_curve.sample(press_length)
@@ -86,8 +86,8 @@ func _process(delta: float) -> void:
 	var dir3d := Vector3(aim.x, 0, aim.y)
 	update_arrow(dir3d * power * arrow_length)
 
-func hit(dir: Vector2, strength: float):
-	_hit(Vector3(dir.x, 0, dir.y) * strength)
+func hit(dir: Vector2, _strength: float):
+	_hit(Vector3(dir.x, 0, dir.y) * _strength)
 	
 func _hit(dir: Vector3):
 	if Global.try_move(device):

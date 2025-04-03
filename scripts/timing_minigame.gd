@@ -66,7 +66,8 @@ func end_game(deviceID: int):
 		
 		Global.update_player_score(min_key, 1)
 		await get_tree().create_timer(3).timeout
-		get_tree().change_scene_to_file("res://scenes/golf.tscn")
+		Global.switch_to_main_scene()
+		
 
 
 func _spawn_player():
