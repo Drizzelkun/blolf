@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci7o47uw11ev5"]
+[gd_scene load_steps=7 format=3 uid="uid://ci7o47uw11ev5"]
 
 [ext_resource type="PackedScene" uid="uid://cnw522vat0swm" path="res://scenes/UI/BlobUIBox.tscn" id="1_0bom8"]
 [ext_resource type="Texture2D" uid="uid://bx26wiuiv77i5" path="res://assets/textures/blob_grün_profil.png" id="2_mqhw7"]
 [ext_resource type="Texture2D" uid="uid://b2emj0tqtogs7" path="res://assets/textures/blob_lila_profil.png" id="3_msvcy"]
 [ext_resource type="Texture2D" uid="uid://d1x58tpslmwla" path="res://assets/textures/blob_orange_profil.png" id="4_40q61"]
+[ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="7_ma8y6"]
 
 [sub_resource type="Theme" id="Theme_mqhw7"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +29,12 @@ alignment = 1
 [node name="Control" parent="HBoxContainer" instance=ExtResource("1_0bom8")]
 layout_mode = 2
 
+[node name="Name" parent="HBoxContainer/Control" index="1"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
+
+[node name="Geld" parent="HBoxContainer/Control" index="2"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
+
 [node name="Control2" parent="HBoxContainer" instance=ExtResource("1_0bom8")]
 layout_mode = 2
 
@@ -35,7 +42,11 @@ layout_mode = 2
 texture = ExtResource("2_mqhw7")
 
 [node name="Name" parent="HBoxContainer/Control2" index="1"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
 text = "Blobina"
+
+[node name="Geld" parent="HBoxContainer/Control2" index="2"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
 
 [node name="Control3" parent="HBoxContainer" instance=ExtResource("1_0bom8")]
 layout_mode = 2
@@ -44,7 +55,11 @@ layout_mode = 2
 texture = ExtResource("3_msvcy")
 
 [node name="Name" parent="HBoxContainer/Control3" index="1"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
 text = "Bloberta"
+
+[node name="Geld" parent="HBoxContainer/Control3" index="2"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
 
 [node name="Control4" parent="HBoxContainer" instance=ExtResource("1_0bom8")]
 layout_mode = 2
@@ -53,7 +68,11 @@ layout_mode = 2
 texture = ExtResource("4_40q61")
 
 [node name="Name" parent="HBoxContainer/Control4" index="1"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
 text = "Blobi"
+
+[node name="Geld" parent="HBoxContainer/Control4" index="2"]
+theme_override_fonts/font = ExtResource("7_ma8y6")
 
 [editable path="HBoxContainer/Control"]
 [editable path="HBoxContainer/Control2"]
