@@ -127,7 +127,7 @@ func game_over():
 			
 	Global.update_player_score(winner, 1)
 	print("Player ", winner, " won the game!!")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://scenes/golf.tscn")
 
 

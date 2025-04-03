@@ -33,8 +33,12 @@ func win(winner: Player) -> void:
 	print("Player ", winner.device, " won")
 	$CanvasLayer/WinScreen/Label.text = names[winner.device] + " won"
 	$CanvasLayer.show()
+	Global.reset_main_game_moves(10_000) # Just for fun allow player to kick the ball around after game is over
 
 func _physics_process(delta: float) -> void:
+	for _player_ in controllers.values():
+		if _player_.linear_velocity.y > 1:
+			_player_.linear_velocity.y = 0
 	if Global.no_more_moves and not Global.game_over:
 		var all_players_stationary := true
 		for _player in controllers.values():
@@ -44,6 +48,7 @@ func _physics_process(delta: float) -> void:
 		if all_players_stationary:
 			await get_tree().create_timer(1).timeout		
 			all_players_stationary = false
-			Global.reset_main_game_moves()
+			Global.reset_main_game_moves(3)
 			Global.save_previous_player_positions(controllers)
-			get_tree().change_scene_to_packed(minigames.pick_random())
+			var random_index = randi_range(0, minigames.size()-1)
+			get_tree().change_scene_to_packed(minigames[random_index])

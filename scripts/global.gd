@@ -16,10 +16,10 @@ func _ready():
 func update_player_score(deviceID: int, amount: int):
 	players[deviceID].score += amount
 
-func reset_main_game_moves():
+func reset_main_game_moves(amount: int):
 	no_more_moves = false
 	for _playerstate in players.values():
-		_playerstate.moves = 3
+		_playerstate.moves = amount
 
 func save_previous_player_positions(controllers):
 	for deviceID in controllers.keys():
