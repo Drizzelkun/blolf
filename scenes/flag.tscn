@@ -1,10 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5vqwsxcrx8en"]
+[gd_scene load_steps=7 format=3 uid="uid://c5vqwsxcrx8en"]
 
 [ext_resource type="PackedScene" uid="uid://brdqvvi2txkhf" path="res://assets/kenney-golf/flag-red.glb" id="1_32e5v"]
 [ext_resource type="Script" uid="uid://boiwfi1sfhovv" path="res://scripts/flag.gd" id="2_q38m2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tjkec"]
 radius = 0.113764
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32e5v"]
+particle_flag_align_y = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, 1, 0)
+spread = 12.0
+initial_velocity_min = 5.0
+initial_velocity_max = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32e5v"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q38m2"]
+material = SubResource("StandardMaterial3D_32e5v")
+size = Vector2(0.04, 0.04)
+orientation = 2
 
 [node name="Flag" instance=ExtResource("1_32e5v")]
 script = ExtResource("2_q38m2")
@@ -14,3 +31,12 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hole" index="0"]
 shape = SubResource("SphereShape3D_tjkec")
+
+[node name="Fountain" type="GPUParticles3D" parent="Hole" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.133745, 0)
+visible = false
+amount = 10000
+visibility_aabb = AABB(-4, 0, -4, 8, 8, 8)
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_32e5v")
+draw_pass_1 = SubResource("PlaneMesh_q38m2")
