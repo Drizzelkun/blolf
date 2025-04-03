@@ -19,6 +19,7 @@ class_name Player
 
 var checkpoint: Vector3
 var press_time: float = 0.0
+var is_aiming := false
 var aim: Vector2
 var power := 0.0
 
@@ -38,13 +39,28 @@ func _input(event: InputEvent) -> void:
 		var press_length := Time.get_unix_time_from_system() - press_time
 		power = strength_curve.sample(press_length)
 		hit(aim, power * strength)
-		Input.start_joy_vibration(device, power, power, 0.05)
 		press_time = 0.0
 	elif event is InputEventJoypadMotion:
 		if event.axis == JOY_AXIS_LEFT_X:
 			aim.x = event.axis_value
 		elif event.axis == JOY_AXIS_LEFT_Y:
 			aim.y = event.axis_value
+	elif event is InputEventMouseButton:
+		is_aiming = event.pressed
+		if not event.pressed:
+			hit(aim, 1.0)
+			aim = Vector2.ZERO
+	elif event is InputEventMouseMotion and is_aiming:
+		var mouse_pos: Vector2 = event.position
+		var camera := get_viewport().get_camera_3d()
+		var origin := camera.project_ray_origin(mouse_pos)
+		var dir := camera.project_ray_normal(mouse_pos)
+		var plane := Plane(Vector3.UP, global_position)
+		var intersection = plane.intersects_ray(origin, dir)
+		if intersection:
+			var aim3d := Vector3(intersection - global_position).limit_length(strength)
+			aim.x = -aim3d.x
+			aim.y = -aim3d.z
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	for contact_idx in state.get_contact_count():
@@ -74,6 +90,7 @@ func hit(dir: Vector2, strength: float):
 	_hit(Vector3(dir.x, 0, dir.y) * strength)
 	
 func _hit(dir: Vector3):
+	Input.start_joy_vibration(device, power, power, 0.05)
 	stream.play_stream(hit_sound, 0, linear_to_db(dir.length()))
 	apply_central_impulse(dir)
 

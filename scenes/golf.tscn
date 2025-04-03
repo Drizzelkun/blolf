@@ -66,4 +66,3 @@ texel_scale = 7.0
 light_data = ExtResource("7_i1bp4")
 
 [connection signal="win" from="BakedMap/Flag" to="." method="win"]
-[connection signal="win" from="BakedMap/Flag" to="." method="_on_flag_win"]
