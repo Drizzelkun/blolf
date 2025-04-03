@@ -1,0 +1,18 @@
+extends Node3D
+
+var controllers: Array[int]
+
+@export var spawn: Vector3
+
+@onready var player := preload("res://scenes/player.tscn")
+
+func _input(event: InputEvent) -> void:
+	if controllers.find(event.device) == -1:
+		var new_player: Player = player.instantiate()
+		add_child(new_player)
+		new_player.device = event.device
+		new_player.checkpoint = spawn
+		new_player.global_position = spawn
+		new_player.name = "Player" + str(event.device)
+		controllers.append(event.device)
+	
