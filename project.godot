@@ -66,6 +66,8 @@ minigame_timing_stop={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/velocity_steps=20
+jolt_physics_3d/simulation/position_steps=8
 jolt_physics_3d/queries/use_enhanced_internal_edge_removal=true
 jolt_physics_3d/collisions/collision_margin_fraction=0.01
 3d/solver/solver_iterations=64

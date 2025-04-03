@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6fgcdv8axg5w"]
+
+[ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="1_8fwv5"]
+
+[sub_resource type="Theme" id="Theme_1x85b"]
+default_font = ExtResource("1_8fwv5")
+default_font_size = 210
+
+[node name="WinScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_1x85b")
+text = "You won"
+horizontal_alignment = 1
+vertical_alignment = 1
