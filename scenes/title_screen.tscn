@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgpy1xm5xkcuh"]
+[gd_scene load_steps=5 format=3 uid="uid://dt452ugvjcmxh"]
 
 [ext_resource type="Texture2D" uid="uid://c8rtojcqmrjc5" path="res://textures/title_screen.png" id="1_fgkus"]
-[ext_resource type="Script" uid="uid://b80u2awsdsfvf" path="res://scripts/title_screen_manager.gd" id="1_s4lrb"]
+[ext_resource type="Script" uid="uid://b1vu5i6nuwg1k" path="res://scripts/title_screen_manager.gd" id="1_s4lrb"]
 [ext_resource type="FontFile" uid="uid://by6mbnqygll88" path="res://assets/fonts/Fredoka-Medium.ttf" id="2_sa3yf"]
+[ext_resource type="AudioStream" uid="uid://bbmwubd6lhvkd" path="res://assets/sounds/title_theme.wav" id="4_mgrm8"]
 
 [node name="Node3D" type="Control"]
 layout_mode = 3
@@ -52,6 +53,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_sa3yf")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_mgrm8")
+volume_db = 80.0
+max_db = 3.625
+autoplay = true
 
 [connection signal="button_up" from="TextureRect/VBoxContainer/Start" to="." method="_on_start_button_up"]
 [connection signal="button_up" from="TextureRect/VBoxContainer/quit" to="." method="_on_button_button_up"]
