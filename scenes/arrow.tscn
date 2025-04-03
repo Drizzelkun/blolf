@@ -8,12 +8,13 @@ top_radius = 0.2
 bottom_radius = 0.0
 height = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umosx"]
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_wyax8"]
-material = SubResource("StandardMaterial3D_umosx")
 top_radius = 0.0
-height = 0.7
+bottom_radius = 0.4
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0gmi"]
+albedo_color = Color(0.760554, 0.112704, 0.737274, 1)
 
 [node name="Arrow" type="Node3D"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
@@ -28,6 +29,7 @@ skeleton = NodePath("")
 [node name="Head" type="Node3D" parent="."]
 
 [node name="Head" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.35)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.25)
 mesh = SubResource("CylinderMesh_wyax8")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_v0gmi")

@@ -14,6 +14,8 @@ var state: int = GAME_STATE.READY
 var players_done: int = 0
 var player_timings: Dictionary
 
+signal time_stopped(playerID)
+
 func _ready():
 	_spawn_player()
 	label.text = "Get ready! Timing starts in 3 seconds..."
@@ -39,7 +41,9 @@ func end_game(deviceID: int):
 	print("Input from device: ", deviceID)
 	if deviceID in player_timings.keys():
 		return
-		
+	
+	time_stopped.emit(deviceID)
+	
 	var current_time: float = Time.get_ticks_msec() / 1000.0  # Current time in seconds
 	var elapsed: float = current_time - start_time
 	var difference: float = abs(elapsed - target_time)
@@ -68,9 +72,9 @@ func end_game(deviceID: int):
 func _spawn_player():
 	for deviceID in Global.players.keys():
 		print("Device ", deviceID, " detected")
-		var node = get_node("player_placeholder" + str(deviceID+1))
+		var node = get_node("player_" + str(deviceID+1))
 		node.visible = true
-	print("FOV of camera: ", $Camera3D.fov)
-	print("Position of first player: ", $player_placeholder1.position)
-	print("Position of second player: ", $player_placeholder2.position)
+	#print("FOV of camera: ", $Camera3D.fov)
+	#print("Position of first player: ", $player_placeholder1.position)
+	#print("Position of second player: ", $player_placeholder2.position)
 	
