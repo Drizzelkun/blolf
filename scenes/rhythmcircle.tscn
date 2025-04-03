@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://khgm3ehdjud2"]
+
+[ext_resource type="Texture2D" uid="uid://cd65jp4ufeg7a" path="res://assets/textures/rhythm_circle.png" id="1_bt64c"]
+
+[node name="Rhythmcircle" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+fixed_size = true
+texture_filter = 0
+texture = ExtResource("1_bt64c")
